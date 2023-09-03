@@ -8,10 +8,7 @@ namespace xadres_console
     {
         static void Main(string[] args)
         {
-            Posicao P;
-            P = new Posicao(3,4);
-
-            Console.WriteLine("Posição: "+P);
+            TabuleiroC tab = new TabuleiroC(8,8);
         }
     }
 }
