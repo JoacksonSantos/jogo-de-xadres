@@ -18,5 +18,10 @@ namespace xadres_console.Tabuleiro
             this.colunas = colunas;
             pecas = new Peca[linhas,colunas];
         }
+
+        public  Peca peca(int linhas, int coluna)
+        {
+            return pecas[linhas, coluna];
+        }
     }
 }
