@@ -13,9 +13,9 @@ namespace xadres_console.Tabuleiro
         public int qteMovimentos { get; protected set; }
         public TabuleiroC tab { get; protected set; }
 
-        public Peca(Posicao posicao, TabuleiroC tab, Cor cor)
+        public Peca( TabuleiroC tab, Cor cor)
         {
-            this.posicao = posicao;
+            this.posicao = null;
             this.cor = cor;
             
             this.tab = tab;
