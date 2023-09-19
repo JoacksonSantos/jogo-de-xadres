@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using tabuleiro;
+
 
 namespace xadres_console.Tabuleiro
 {
-    internal class TabuleiroC
+    public class TabuleiroC
     {
         public int linhas { get; set; }
         public int colunas { get; set; }
-        private Peca[,] pecas;
+        public Peca[,] pecas;
 
         public TabuleiroC(int linhas, int colunas)
         {
@@ -39,6 +36,18 @@ namespace xadres_console.Tabuleiro
             }
             pecas[pos.linha, pos.coluna] =p;
             p.posicao = pos;
+        }
+
+        public Peca RetirarPeca(Posicao pos)
+        {
+            if (peca(pos) == null)
+            {
+                return null;
+            }
+            Peca aux = peca(pos);
+            aux.posicao = null;
+            pecas[pos.linha, pos.coluna] = null;
+            return aux;
         }
 
         public bool posicaoValida(Posicao pos)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace xadres_console.Tabuleiro
 {
-    internal class Posicao
+    public class Posicao
     {
         public int linha { get; set; }
         public int coluna { get; set; }

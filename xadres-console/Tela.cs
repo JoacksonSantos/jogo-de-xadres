@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using xadres_console.Tabuleiro;
+using xadres_console.xadres;
 
 
 namespace xadres_console
@@ -48,6 +49,15 @@ namespace xadres_console
                 Console.ForegroundColor = aux;
             }
         }
+        public static PosicaoXadres lerPosicaoXadres()
+        {
+            string s = Console.ReadLine();
+            char coluna = s[0];
+            int linha = int.Parse(s[1]+"");
+            return new PosicaoXadres(coluna, linha);
+        }
+        
 
+        
     }
 }
