@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace xadres_console.Tabuleiro
 {
-    public class Peca
+    public abstract class Peca
     {
         public Posicao posicao { get; set; }
         public Cor cor { get; protected set; }
@@ -21,9 +21,11 @@ namespace xadres_console.Tabuleiro
             this.tab = tab;
             this.qteMovimentos = 0;
         }
-        public void incrementarQtdMovimentos()
-        {
-            qteMovimentos++;
-        }
+        // public void incrementarQtdMovimentos()
+        // {
+        //    qteMovimentos++;
+        // }
+        public abstract bool[,] movimentosPossiveis();
+
     }
 }

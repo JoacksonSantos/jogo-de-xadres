@@ -8,7 +8,7 @@ namespace xadres_console.Tabuleiro
     {
         public int linhas { get; set; }
         public int colunas { get; set; }
-        public Peca[,] pecas;
+        private Peca[,] pecas;
 
         public TabuleiroC(int linhas, int colunas)
         {

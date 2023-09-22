@@ -6,7 +6,7 @@ namespace xadres_console.xadres
 {
     public class PartidaDeXadres
     {
-        public TabuleiroC tab { get; set; }
+        public TabuleiroC tab { get; private set; }
         private int turno;
         private Cor jogadorAtual;
         public bool terminada { get; private set; }
@@ -25,7 +25,7 @@ namespace xadres_console.xadres
         public void executaMovimento(Posicao origem, Posicao destino)
         {
             Peca p = tab.RetirarPeca(origem);
-            p.incrementarQtdMovimentos();
+           // p.incrementarQtdMovimentos();
             Peca pecaCapturada = tab.RetirarPeca(destino);
             tab.colocarPeca(p, destino);
         }
