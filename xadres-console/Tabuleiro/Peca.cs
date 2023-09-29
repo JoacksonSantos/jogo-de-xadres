@@ -21,10 +21,10 @@ namespace xadres_console.Tabuleiro
             this.tab = tab;
             this.qteMovimentos = 0;
         }
-        // public void incrementarQtdMovimentos()
-        // {
-        //    qteMovimentos++;
-        // }
+         public void incrementarQtdMovimentos()
+         {
+           qteMovimentos++;
+         }
 
         public bool existeMovimentsPossiveis(){
             bool[,] mat = movimentosPossiveis();
