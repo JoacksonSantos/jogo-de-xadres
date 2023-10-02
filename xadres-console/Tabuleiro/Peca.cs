@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using xadres_console.xadres;
 namespace xadres_console.Tabuleiro
 {
     public abstract class Peca
@@ -25,6 +25,11 @@ namespace xadres_console.Tabuleiro
          {
            qteMovimentos++;
          }
+        public void decrementarQtdMovimentos()
+        {
+            qteMovimentos--;
+        }
+
 
         public bool existeMovimentsPossiveis(){
             bool[,] mat = movimentosPossiveis();
