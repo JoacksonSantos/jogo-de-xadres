@@ -45,6 +45,8 @@ namespace xadres_console
                     
                     }
                 }
+                Console.Clear();
+                Tela.imprimirPartida(partida);
          
               
             }
