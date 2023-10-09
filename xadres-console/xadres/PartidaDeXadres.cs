@@ -42,6 +42,27 @@ namespace xadres_console.xadres
             {
                 capturadas.Add(pecaCapturada);
             }
+            //# jogada especial roque pequeno
+            if(p is Rei && destino.coluna == origem.coluna + 2)
+            {
+                Posicao origemT = new Posicao(origem.linha, origem.coluna + 3);
+                Posicao destinoT = new Posicao(origem.linha, origem.coluna + 1);
+                Peca T = tab.RetirarPeca(origemT);
+                T.incrementarQtdMovimentos();
+                tab.colocarPeca(T,destinoT);
+
+            }
+            //# jogada especial roque grande
+            if (p is Rei && destino.coluna == origem.coluna - 2)
+            {
+                Posicao origemT = new Posicao(origem.linha, origem.coluna -4);
+                Posicao destinoT = new Posicao(origem.linha, origem.coluna - 1);
+                Peca T = tab.RetirarPeca(origemT);
+                T.incrementarQtdMovimentos();
+                tab.colocarPeca(T, destinoT);
+
+            }
+
             return pecaCapturada;
         }
         
@@ -55,6 +76,27 @@ namespace xadres_console.xadres
                 capturadas.Remove(pecaCapturada);
             }
             tab.colocarPeca(p, origem);
+            //# jogada especial roque pequeno
+            if (p is Rei && destino.coluna == origem.coluna + 2)
+            {
+                Posicao origemT = new Posicao(origem.linha, origem.coluna + 3);
+                Posicao destinoT = new Posicao(origem.linha, origem.coluna + 1);
+                Peca T = tab.RetirarPeca(destinoT);
+                T.decrementarQtdMovimentos();
+                tab.colocarPeca(T, origemT);
+
+            }         
+            //# jogada especial roque grande
+            if (p is Rei && destino.coluna == origem.coluna - 2)
+            {
+                Posicao origemT = new Posicao(origem.linha, origem.coluna - 4);
+                Posicao destinoT = new Posicao(origem.linha, origem.coluna - 1);
+                Peca T = tab.RetirarPeca(destinoT);
+                T.decrementarQtdMovimentos();
+                tab.colocarPeca(T, origemT);
+
+            }
+
         }
         public void realizaJogada(Posicao origem,Posicao destino)
         {
@@ -225,7 +267,7 @@ namespace xadres_console.xadres
             colocarNovaPeca('b',1,new Cavalo(tab, Cor.Branca));
             colocarNovaPeca('c',1 ,new Bispo (tab, Cor.Branca));
             colocarNovaPeca('d',1, new Dama(tab, Cor.Branca));
-            colocarNovaPeca('e',1, new Rei(tab, Cor.Branca));
+            colocarNovaPeca('e',1, new Rei(tab, Cor.Branca, this));
             colocarNovaPeca('f',1, new Bispo(tab, Cor.Branca));
             colocarNovaPeca('g', 1, new Cavalo(tab, Cor.Branca));
             colocarNovaPeca('h',1, new Torre(tab, Cor.Branca));
@@ -244,7 +286,7 @@ namespace xadres_console.xadres
             colocarNovaPeca('b', 8, new Cavalo(tab, Cor.Preta));
             colocarNovaPeca('c', 8, new Bispo(tab, Cor.Preta));
             colocarNovaPeca('d', 8, new Dama(tab, Cor.Preta));
-            colocarNovaPeca('e', 8, new Rei(tab, Cor.Preta));
+            colocarNovaPeca('e', 8, new Rei(tab, Cor.Preta, this));
             colocarNovaPeca('f', 8, new Bispo(tab, Cor.Preta));
             colocarNovaPeca('g', 8, new Cavalo(tab, Cor.Preta));
             colocarNovaPeca('h', 8, new Torre(tab, Cor.Preta));
